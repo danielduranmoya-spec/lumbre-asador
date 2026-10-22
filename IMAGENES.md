@@ -5,18 +5,20 @@ La web funciona sin fotos: cada hueco tiene su tamaño fijo, un fondo de la pale
 1. Súbela a la carpeta `img/` con el nombre exacto de la tabla.
 2. Añade ese nombre a `CONFIG.fotos` al principio de `script.js`, por ejemplo `fotos: ['hero-parrilla.jpg', 'carta-brasa.jpg']`.
 
-La web solo pide las fotos que están en esa lista, así no hay errores 404 mientras faltan.
+La web solo pide las fotos que están en esa lista. Si una está en la lista pero todavía no se ha subido, se queda el hueco con su texto.
+
+**Estado:** las cinco fotos de la carta ya están en `CONFIG.fotos` (1024 × 768 px, menos de 160 KB cada una). Solo falta `hero-parrilla.jpg`.
 
 **Estilo común para todas:** luz cálida y lateral (de ventana o de la propia brasa), fondo oscuro, sin flash, madera y barro como superficies, nada de vajilla blanca brillante. Mismo encuadre ligeramente cenital en los platos.
 
 | Archivo | Tamaño | Dónde sale | Qué debe verse |
 |---|---|---|---|
 | `img/hero-parrilla.jpg` | 2400 × 1500 px | Fondo del inicio (se oscurece al 55 %) | Secreto ibérico dorándose sobre la parrilla, con brasas de encina debajo y algo de humo. Horizontal, con espacio libre arriba a la izquierda para el titular. |
-| `img/carta-brasa.jpg` | 1200 × 900 px | Carta · Brasa | Presa ibérica cortada en láminas sobre una tabla de madera. |
-| `img/carta-entrantes.jpg` | 1200 × 900 px | Carta · Entrantes | Migas extremeñas con uvas y huevo frito en una cazuela de barro. |
-| `img/carta-quesos.jpg` | 1200 × 900 px | Carta · Quesos de la tierra | Torta del Casar abierta con una cuchara y tostas alrededor. |
-| `img/carta-postres.jpg` | 1200 × 900 px | Carta · Postres | Porción de técula mécula con almendra laminada. |
-| `img/carta-vinos.jpg` | 1200 × 900 px | Carta · Vinos | Copa de vino tinto junto a una botella de Ribera del Guadiana. |
+| `img/carta-brasa.jpg` ✓ | 1200 × 900 px | Carta · Brasa | Presa ibérica cortada en láminas sobre una tabla de madera. |
+| `img/carta-entrantes.jpg` ✓ | 1200 × 900 px | Carta · Entrantes | Migas extremeñas con uvas y huevo frito en una cazuela de barro. |
+| `img/carta-quesos.jpg` ✓ | 1200 × 900 px | Carta · Quesos de la tierra | Torta del Casar abierta con una cuchara y tostas alrededor. |
+| `img/carta-postres.jpg` ✓ | 1200 × 900 px | Carta · Postres | Porción de técula mécula con almendra laminada. |
+| `img/carta-vinos.jpg` ✓ | 1200 × 900 px | Carta · Vinos | Copa de vino tinto junto a una botella de Ribera del Guadiana. |
 
 ## Antes de subirlas
 
