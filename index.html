@@ -1,0 +1,480 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>LUMBRE — Asador de ibérico a la brasa en Mérida</title>
+  <meta name="description" content="Asador de ibérico de bellota a la brasa de encina en Mérida. Carta de la tierra, quesos D.O.P. y reservas online por WhatsApp. Concepto de web de Daniel Durán.">
+  <meta name="theme-color" content="#1A1614">
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <link rel="canonical" href="https://danielduranmoya-spec.github.io/lumbre-asador/">
+
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="es_ES">
+  <meta property="og:site_name" content="LUMBRE Asador">
+  <meta property="og:title" content="LUMBRE — Asador de ibérico a la brasa en Mérida">
+  <meta property="og:description" content="Ibérico de bellota sobre brasa de encina, quesos de la tierra y reservas en tres pasos.">
+  <meta property="og:url" content="https://danielduranmoya-spec.github.io/lumbre-asador/">
+  <meta name="twitter:card" content="summary">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Anton&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;1,6..72,400&family=Space+Mono:wght@400;700&display=swap">
+  <link rel="stylesheet" href="style.css">
+  <script>document.documentElement.classList.add('js');</script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Restaurant",
+    "name": "LUMBRE Asador",
+    "description": "Asador de ibérico a la brasa de encina en Mérida (concepto de web, negocio ficticio).",
+    "url": "https://danielduranmoya-spec.github.io/lumbre-asador/",
+    "menu": "https://danielduranmoya-spec.github.io/lumbre-asador/#carta",
+    "telephone": "+34600000000",
+    "servesCuisine": ["Asador", "Cocina extremeña"],
+    "priceRange": "€€",
+    "acceptsReservations": "True",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "C. de la Encina, 12",
+      "postalCode": "06800",
+      "addressLocality": "Mérida",
+      "addressRegion": "Badajoz",
+      "addressCountry": "ES"
+    },
+    "geo": { "@type": "GeoCoordinates", "latitude": 38.9183, "longitude": -6.3432 },
+    "openingHoursSpecification": [
+      { "@type": "OpeningHoursSpecification", "dayOfWeek": ["Tuesday","Wednesday","Thursday","Friday","Saturday"], "opens": "13:30", "closes": "16:00" },
+      { "@type": "OpeningHoursSpecification", "dayOfWeek": ["Tuesday","Wednesday","Thursday","Friday","Saturday"], "opens": "20:30", "closes": "23:30" },
+      { "@type": "OpeningHoursSpecification", "dayOfWeek": "Sunday", "opens": "13:30", "closes": "16:30" }
+    ]
+  }
+  </script>
+</head>
+<body>
+  <!-- Iconos: alérgenos, estrellas y utilidades -->
+  <svg class="sprite" aria-hidden="true" focusable="false">
+    <symbol id="i-flame" viewBox="0 0 24 24"><path d="M12 2.8c.6 3.3 4.9 5.6 4.9 10.6A4.9 4.9 0 0 1 12 18.3a4.9 4.9 0 0 1-4.9-4.9c0-2.4 1.3-3.9 2.5-5.2.2 1.6 1 2.6 2 3 .1-2.8.1-5.4.4-8.4z" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/><path d="M12 21.2v-2.9" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></symbol>
+    <symbol id="al-gluten" viewBox="0 0 24 24"><path d="M12 21V7M12 11c-2.5 0-4-1.6-4-4 2.5 0 4 1.6 4 4zm0 0c2.5 0 4-1.6 4-4-2.5 0-4 1.6-4 4zm0 4c-2.5 0-4-1.6-4-4 2.5 0 4 1.6 4 4zm0 0c2.5 0 4-1.6 4-4-2.5 0-4 1.6-4 4zM12 7c-1-1-1-2.8 0-4 1 1.2 1 3 0 4z" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linejoin="round"/></symbol>
+    <symbol id="al-lacteos" viewBox="0 0 24 24"><path d="M9.5 3h5M10 3v3.2L7.5 10v10a1 1 0 0 0 1 1h7a1 1 0 0 0 1-1V10L14 6.2V3M7.5 13h9" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linejoin="round" stroke-linecap="round"/></symbol>
+    <symbol id="al-huevo" viewBox="0 0 24 24"><path d="M12 3c3.3 0 6 5.2 6 9.8A6 6 0 0 1 12 19a6 6 0 0 1-6-6.2C6 8.2 8.7 3 12 3z" fill="none" stroke="currentColor" stroke-width="1.4"/><path d="M4 21h16" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></symbol>
+    <symbol id="al-frutos" viewBox="0 0 24 24"><path d="M12 4c4 0 6.5 3.5 6.5 7.6 0 4.6-3.2 8.4-6.5 8.4s-6.5-3.8-6.5-8.4C5.5 7.5 8 4 12 4z" fill="none" stroke="currentColor" stroke-width="1.4"/><path d="M12 6.5c-1.2 3.2-1.2 7.8 0 11" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"/></symbol>
+    <symbol id="al-sulfitos" viewBox="0 0 24 24"><path d="M7.5 3h9l-.4 5.5a4.1 4.1 0 0 1-8.2 0zM12 12.6V20M8.5 21h7M8 7h8" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linejoin="round" stroke-linecap="round"/></symbol>
+    <symbol id="i-star" viewBox="0 0 24 24"><path d="M12 3.2l2.6 5.5 6 .8-4.4 4.1 1.1 5.9L12 16.6l-5.3 2.9 1.1-5.9-4.4-4.1 6-.8z"/></symbol>
+    <symbol id="i-camera" viewBox="0 0 24 24"><path d="M4 8h3l1.6-2.4h6.8L17 8h3v11H4z" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linejoin="round"/><circle cx="12" cy="13.2" r="3.4" fill="none" stroke="currentColor" stroke-width="1.4"/></symbol>
+    <symbol id="i-pin" viewBox="0 0 24 24"><path d="M12 21s-6.5-5.6-6.5-11a6.5 6.5 0 0 1 13 0c0 5.4-6.5 11-6.5 11z" fill="none" stroke="currentColor" stroke-width="1.5"/><circle cx="12" cy="10" r="2.4" fill="none" stroke="currentColor" stroke-width="1.5"/></symbol>
+    <symbol id="i-chat" viewBox="0 0 24 24"><path d="M4.5 19.5l1.2-3.6A7.5 7.5 0 1 1 8.4 18.6z" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"/><path d="M9 10.2h6M9 13.4h4" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/></symbol>
+    <symbol id="i-check" viewBox="0 0 24 24"><path d="M5 12.5l4.2 4.2L19 7" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+    <symbol id="i-chevron" viewBox="0 0 24 24"><path d="M9.5 5.5L16 12l-6.5 6.5" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+  </svg>
+
+  <a class="skip-link" href="#contenido">Saltar al contenido</a>
+
+  <div class="concept-bar">
+    <div class="wrap concept-bar__inner">
+      <p><span class="concept-bar__tag">Concepto</span> Asador ficticio<span class="concept-bar__long">: ejemplo de web de negocio diseñada por Daniel Durán</span>.</p>
+      <a href="https://danielduranmoya-spec.github.io/#contacto">Quiero una web así <span aria-hidden="true">→</span></a>
+    </div>
+  </div>
+
+  <header class="site-header" data-header>
+    <div class="wrap site-header__inner">
+      <a class="logo" href="#inicio" aria-label="LUMBRE Asador, ir al inicio">
+        <svg class="logo__mark" aria-hidden="true"><use href="#i-flame"/></svg>
+        <span class="logo__word">LUMBRE</span>
+        <span class="logo__sub">Asador · Mérida</span>
+      </a>
+      <nav class="site-nav" aria-label="Principal">
+        <a href="#carta">Carta</a>
+        <a href="#reservas">Reservas</a>
+        <a href="#opiniones">Opiniones</a>
+        <a href="#contacto">Dónde estamos</a>
+      </nav>
+      <a class="btn btn--primary btn--small" href="#reservas">Reservar</a>
+    </div>
+  </header>
+
+  <main id="contenido">
+
+    <!-- ============ INICIO ============ -->
+    <section class="hero" id="inicio" data-hero>
+      <img class="hero__photo" data-photo="img/hero-parrilla.jpg" alt="" hidden>
+      <div class="hero__glow" aria-hidden="true"></div>
+      <canvas class="hero__embers" data-embers aria-hidden="true"></canvas>
+
+      <div class="wrap hero__inner">
+        <p class="eyebrow reveal"><svg class="eyebrow__icon" aria-hidden="true"><use href="#i-flame"/></svg>Asador de ibérico · Mérida</p>
+        <h1 class="hero__title reveal" style="--i:1">
+          <span class="hero__line">Fuego de encina.</span>
+          <span class="hero__line hero__line--accent">Carne de dehesa.</span>
+        </h1>
+        <div class="hero__row">
+          <p class="lead hero__lead reveal" style="--i:2">Secreto, presa y pluma de cerdo ibérico de bellota hechos sobre brasa de encina, a dos calles del Templo de Diana. Comida y cena de martes a domingo.</p>
+          <div class="hero__actions reveal" style="--i:3">
+            <a class="btn btn--primary" href="#reservas">Reservar mesa</a>
+            <a class="btn btn--ghost" href="#carta">Ver la carta</a>
+          </div>
+        </div>
+        <dl class="hero__strip reveal" style="--i:4">
+          <div><dt>Martes a sábado</dt><dd><span class="nowrap">13:30–16:00</span> · <span class="nowrap">20:30–23:30</span></dd></div>
+          <div><dt>Domingo</dt><dd>13:30–16:30</dd></div>
+          <div><dt>Lunes</dt><dd>Cerrado por descanso</dd></div>
+          <div><dt>Terraza</dt><dd>12 mesas a la sombra</dd></div>
+        </dl>
+      </div>
+    </section>
+
+    <!-- ============ CARTA ============ -->
+    <section class="section menu" id="carta" aria-labelledby="carta-title">
+      <div class="wrap">
+        <header class="section-head menu__head reveal">
+          <p class="eyebrow">01 — La carta</p>
+          <h2 id="carta-title">Todo pasa<br>por la brasa</h2>
+          <p class="lead">Carne de cerdo ibérico de bellota y ternera retinta de ganaderías de la provincia, quesos con denominación de origen y vinos de la Ribera del Guadiana.</p>
+        </header>
+
+        <div class="menu-filters reveal" role="group" aria-label="Categorías de la carta" data-menu-filters>
+          <button class="filter" type="button" data-cat="brasa" aria-pressed="true" aria-controls="menu-panel">Brasa</button>
+          <button class="filter" type="button" data-cat="entrantes" aria-pressed="false" aria-controls="menu-panel">Entrantes</button>
+          <button class="filter" type="button" data-cat="quesos" aria-pressed="false" aria-controls="menu-panel">Quesos de la tierra</button>
+          <button class="filter" type="button" data-cat="postres" aria-pressed="false" aria-controls="menu-panel">Postres</button>
+          <button class="filter" type="button" data-cat="vinos" aria-pressed="false" aria-controls="menu-panel">Vinos</button>
+        </div>
+
+        <div class="menu__body" id="menu-panel" aria-live="polite" data-menu-panel>
+          <aside class="menu__aside" data-menu-aside>
+            <p class="mono menu__count">Categoría 01 / 05</p>
+            <h3 class="menu__cat">Brasa</h3>
+            <p class="menu__note">Toda la carne se hace sobre brasa de encina, sin gas ni planchas. Te recomendamos el punto, pero lo eliges tú.</p>
+            <figure class="ph" style="aspect-ratio: 4 / 3">
+              <figcaption class="ph__label"><svg aria-hidden="true"><use href="#i-camera"/></svg><span>Presa ibérica cortada en láminas sobre una tabla de madera</span></figcaption>
+            </figure>
+          </aside>
+          <ul class="dish-list" data-menu-list>
+            <li class="dish">
+              <div class="dish__top"><h4 class="dish__name">Secreto ibérico de bellota</h4><p class="dish__price">19,50 €</p></div>
+              <p class="dish__desc">250 g, con patatas a lo pobre y pimiento asado.</p>
+            </li>
+            <li class="dish">
+              <div class="dish__top"><h4 class="dish__name">Presa ibérica</h4><p class="dish__price">22,00 €</p></div>
+              <p class="dish__desc">300 g, en láminas con sal en escamas.</p>
+            </li>
+            <li class="dish">
+              <div class="dish__top"><h4 class="dish__name">Pluma ibérica</h4><p class="dish__price">20,50 €</p></div>
+              <p class="dish__desc">250 g, con mojo de pimentón de La Vera.</p>
+            </li>
+            <li class="dish">
+              <div class="dish__top"><h4 class="dish__name">Chuletón de ternera retinta</h4><p class="dish__price">52,00 €</p></div>
+              <p class="dish__desc">1 kg aproximado, para compartir entre dos o tres.</p>
+            </li>
+            <li class="dish">
+              <div class="dish__top"><h4 class="dish__name">Costillas ibéricas glaseadas</h4><p class="dish__price">17,00 €</p></div>
+              <p class="dish__desc">Lacadas con miel de las Villuercas y romero.</p>
+            </li>
+            <li class="dish">
+              <div class="dish__top"><h4 class="dish__name">Verduras de temporada a la brasa</h4><p class="dish__price">12,00 €</p></div>
+              <p class="dish__desc">Con aceite de oliva virgen extra de Monterrubio.</p>
+            </li>
+          </ul>
+        </div>
+
+        <div class="allergens reveal">
+          <p class="mono allergens__title">Alérgenos</p>
+          <ul class="allergens__list">
+            <li><svg aria-hidden="true"><use href="#al-gluten"/></svg>Gluten</li>
+            <li><svg aria-hidden="true"><use href="#al-lacteos"/></svg>Lácteos</li>
+            <li><svg aria-hidden="true"><use href="#al-huevo"/></svg>Huevo</li>
+            <li><svg aria-hidden="true"><use href="#al-frutos"/></svg>Frutos secos</li>
+            <li><svg aria-hidden="true"><use href="#al-sulfitos"/></svg>Sulfitos</li>
+          </ul>
+          <p class="allergens__note">Si tienes alguna alergia o intolerancia, avísanos al reservar. Tenemos la información de los 14 alérgenos de cada plato, como exige el Reglamento (UE) 1169/2011.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ RESERVAS ============ -->
+    <section class="section booking" id="reservas" aria-labelledby="reservas-title">
+      <div class="wrap">
+        <header class="section-head booking__head reveal">
+          <p class="eyebrow">02 — Reservas</p>
+          <h2 id="reservas-title">Tu mesa<br>en tres pasos</h2>
+          <p class="lead">Elige día, hora y mesa. La reserva se envía por WhatsApp y te la confirmamos en menos de una hora dentro del horario de apertura.</p>
+        </header>
+
+        <div class="booking__grid">
+          <form class="booking__widget reveal" style="--i:1" data-booking novalidate>
+            <ol class="steps" data-steps>
+              <li class="steps__item" data-step-label="1" aria-current="step"><span class="steps__num">01</span>Fecha</li>
+              <li class="steps__item" data-step-label="2"><span class="steps__num">02</span>Personas y hora</li>
+              <li class="steps__item" data-step-label="3"><span class="steps__num">03</span>Mesa y datos</li>
+            </ol>
+
+            <div class="booking__noscript">
+              <p>Activa JavaScript para reservar online, o escríbenos directamente por <a data-wa href="https://wa.me/34600000000">WhatsApp</a> o llama al <a data-tel href="tel:+34600000000"><span data-tel-text>600 000 000</span></a>.</p>
+            </div>
+
+            <!-- Paso 1 -->
+            <fieldset class="step" data-step="1">
+              <legend class="step__legend">¿Qué día venís?</legend>
+              <div class="calendar" data-calendar>
+                <div class="calendar__head">
+                  <button class="icon-btn" type="button" data-cal-prev aria-label="Mes anterior"><svg aria-hidden="true" style="transform: rotate(180deg)"><use href="#i-chevron"/></svg></button>
+                  <p class="calendar__month" data-cal-month aria-live="polite">Octubre 2026</p>
+                  <button class="icon-btn" type="button" data-cal-next aria-label="Mes siguiente"><svg aria-hidden="true"><use href="#i-chevron"/></svg></button>
+                </div>
+                <div class="calendar__weekdays" aria-hidden="true"><span>L</span><span>M</span><span>X</span><span>J</span><span>V</span><span>S</span><span>D</span></div>
+                <div class="calendar__grid" data-cal-grid></div>
+                <p class="calendar__legend"><span class="calendar__closed-mark" aria-hidden="true"></span>Lunes cerrado por descanso. Reservas con hasta 60 días de antelación.</p>
+              </div>
+              <p class="field-error" data-error="date" hidden>Elige un día para continuar.</p>
+              <div class="step__actions">
+                <button class="btn btn--dark" type="button" data-next>Siguiente: personas y hora</button>
+              </div>
+            </fieldset>
+
+            <!-- Paso 2 -->
+            <fieldset class="step" data-step="2" hidden>
+              <legend class="step__legend">¿Cuántos sois y a qué hora?</legend>
+
+              <div class="field">
+                <p class="field__label" id="people-label">Comensales</p>
+                <div class="stepper" role="group" aria-labelledby="people-label">
+                  <button class="icon-btn" type="button" data-people="-1" aria-label="Quitar un comensal">−</button>
+                  <output class="stepper__value" data-people-value aria-live="polite">2</output>
+                  <button class="icon-btn" type="button" data-people="1" aria-label="Añadir un comensal">+</button>
+                </div>
+                <p class="field__hint">Para grupos de más de 12 personas, <a data-wa data-wa-msg="Hola, quiero reservar en LUMBRE para un grupo de más de 12 personas." href="https://wa.me/34600000000">escríbenos por WhatsApp</a>.</p>
+              </div>
+
+              <div class="field">
+                <p class="field__label" id="turn-label">Turno</p>
+                <div class="segmented" role="radiogroup" aria-labelledby="turn-label">
+                  <label class="segmented__opt"><input type="radio" name="turno" value="comida" checked><span>Comida</span></label>
+                  <label class="segmented__opt"><input type="radio" name="turno" value="cena"><span>Cena</span></label>
+                </div>
+              </div>
+
+              <div class="field">
+                <p class="field__label" id="slot-label">Hora</p>
+                <div class="slots" role="radiogroup" aria-labelledby="slot-label" data-slots></div>
+                <p class="field__hint" data-slots-hint hidden></p>
+              </div>
+              <p class="field-error" data-error="slot" hidden>Elige una hora para continuar.</p>
+
+              <div class="step__actions">
+                <button class="btn btn--line" type="button" data-prev>Atrás</button>
+                <button class="btn btn--dark" type="button" data-next>Siguiente: mesa y datos</button>
+              </div>
+            </fieldset>
+
+            <!-- Paso 3 -->
+            <fieldset class="step" data-step="3" hidden>
+              <legend class="step__legend">¿Dónde os sentamos?</legend>
+
+              <div class="zones" role="radiogroup" aria-label="Zona">
+                <label class="zone-opt"><input type="radio" name="zona" value="terraza"><span class="zone-opt__body"><strong>Terraza</strong><small>A la sombra, con calefactores en invierno</small></span></label>
+                <label class="zone-opt"><input type="radio" name="zona" value="interior"><span class="zone-opt__body"><strong>Interior</strong><small>Junto a la parrilla, se ve el fuego</small></span></label>
+                <label class="zone-opt"><input type="radio" name="zona" value="indiferente" checked><span class="zone-opt__body"><strong>Sin preferencia</strong><small>Donde haya sitio a esa hora</small></span></label>
+              </div>
+
+              <div class="field-row">
+                <div class="field">
+                  <label class="field__label" for="f-nombre">Nombre</label>
+                  <input class="input" id="f-nombre" name="nombre" type="text" autocomplete="name" required aria-describedby="e-nombre">
+                  <p class="field-error" id="e-nombre" data-error="nombre" hidden>Escribe tu nombre.</p>
+                </div>
+                <div class="field">
+                  <label class="field__label" for="f-telefono">Teléfono</label>
+                  <input class="input" id="f-telefono" name="telefono" type="tel" inputmode="tel" autocomplete="tel" required aria-describedby="e-telefono" placeholder="600 000 000">
+                  <p class="field-error" id="e-telefono" data-error="telefono" hidden>Escribe un teléfono de 9 cifras.</p>
+                </div>
+              </div>
+
+              <div class="field">
+                <label class="field__label" for="f-notas">Comentarios <span class="field__optional">opcional</span></label>
+                <textarea class="input input--area" id="f-notas" name="notas" rows="3" placeholder="Alergias, trona, una celebración…"></textarea>
+              </div>
+
+              <label class="check">
+                <input type="checkbox" name="privacidad" required aria-describedby="e-privacidad">
+                <span>He leído la <a href="privacidad.html">política de privacidad</a> y acepto que usen mis datos para gestionar la reserva.</span>
+              </label>
+              <p class="field-error" id="e-privacidad" data-error="privacidad" hidden>Necesitamos que aceptes la política de privacidad.</p>
+
+              <div class="step__actions">
+                <button class="btn btn--line" type="button" data-prev>Atrás</button>
+                <button class="btn btn--dark" type="submit">Revisar reserva</button>
+              </div>
+            </fieldset>
+
+            <!-- Confirmación -->
+            <div class="confirm" data-confirm hidden tabindex="-1">
+              <p class="confirm__icon" aria-hidden="true"><svg><use href="#i-check"/></svg></p>
+              <h3 class="confirm__title">Tu reserva está lista para enviar</h3>
+              <dl class="confirm__summary" data-confirm-summary></dl>
+              <p class="confirm__note">Al pulsar el botón se abre WhatsApp con el mensaje ya escrito. La mesa queda reservada cuando te respondamos.</p>
+              <div class="step__actions">
+                <button class="btn btn--line" type="button" data-edit>Cambiar algo</button>
+                <a class="btn btn--primary" data-confirm-link href="https://wa.me/34600000000" target="_blank" rel="noopener"><svg class="icon" aria-hidden="true"><use href="#i-chat"/></svg>Enviar por WhatsApp</a>
+              </div>
+            </div>
+          </form>
+
+          <aside class="booking__summary reveal" style="--i:2" aria-label="Resumen de tu reserva">
+            <p class="mono booking__summary-title">Tu reserva</p>
+            <dl class="summary" data-summary>
+              <div><dt>Día</dt><dd data-sum="fecha">—</dd></div>
+              <div><dt>Hora</dt><dd data-sum="hora">—</dd></div>
+              <div><dt>Personas</dt><dd data-sum="personas">2</dd></div>
+              <div><dt>Zona</dt><dd data-sum="zona">Sin preferencia</dd></div>
+            </dl>
+            <ul class="booking__facts">
+              <li>Puedes cancelar sin coste hasta 2 horas antes.</li>
+              <li>Guardamos la mesa 15 minutos.</li>
+              <li>Tronas y menú infantil disponibles.</li>
+            </ul>
+          </aside>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ OPINIONES ============ -->
+    <section class="section reviews" id="opiniones" aria-labelledby="opiniones-title">
+      <div class="wrap reviews__grid">
+        <header class="section-head reviews__head reveal">
+          <p class="eyebrow">03 — Opiniones</p>
+          <h2 id="opiniones-title">Lo que cuentan<br>en la mesa</h2>
+          <p class="tag tag--outline">Reseñas de ejemplo · concepto</p>
+        </header>
+
+        <div class="score reveal" style="--i:1" data-score>
+          <p class="score__value">4,8</p>
+          <p class="stars" aria-label="4,8 de 5 estrellas">
+            <svg aria-hidden="true"><use href="#i-star"/></svg><svg aria-hidden="true"><use href="#i-star"/></svg><svg aria-hidden="true"><use href="#i-star"/></svg><svg aria-hidden="true"><use href="#i-star"/></svg><svg aria-hidden="true"><use href="#i-star"/></svg>
+          </p>
+          <p class="score__caption">Media de las 4 reseñas de ejemplo de esta página.</p>
+          <ul class="bars" aria-label="Distribución de valoraciones">
+            <li style="--v:0.75"><span class="bars__label">5</span><span class="bars__track"><span class="bars__fill"></span></span><span class="bars__count">3</span></li>
+            <li style="--v:0.25"><span class="bars__label">4</span><span class="bars__track"><span class="bars__fill"></span></span><span class="bars__count">1</span></li>
+            <li style="--v:0"><span class="bars__label">3</span><span class="bars__track"><span class="bars__fill"></span></span><span class="bars__count">0</span></li>
+            <li style="--v:0"><span class="bars__label">2</span><span class="bars__track"><span class="bars__fill"></span></span><span class="bars__count">0</span></li>
+            <li style="--v:0"><span class="bars__label">1</span><span class="bars__track"><span class="bars__fill"></span></span><span class="bars__count">0</span></li>
+          </ul>
+        </div>
+
+        <ul class="quotes">
+          <li class="quote reveal" style="--i:1">
+            <p class="stars stars--small" aria-label="5 de 5 estrellas"><svg aria-hidden="true"><use href="#i-star"/></svg><svg aria-hidden="true"><use href="#i-star"/></svg><svg aria-hidden="true"><use href="#i-star"/></svg><svg aria-hidden="true"><use href="#i-star"/></svg><svg aria-hidden="true"><use href="#i-star"/></svg></p>
+            <blockquote><p>Pedimos la presa y el secreto para compartir y llegaron en su punto, con esa costra de la brasa que no se consigue en casa. La Torta del Casar con tostas, imprescindible.</p></blockquote>
+            <p class="quote__meta mono">Marta G. · Cena para cuatro · Octubre</p>
+          </li>
+          <li class="quote reveal" style="--i:2">
+            <p class="stars stars--small" aria-label="5 de 5 estrellas"><svg aria-hidden="true"><use href="#i-star"/></svg><svg aria-hidden="true"><use href="#i-star"/></svg><svg aria-hidden="true"><use href="#i-star"/></svg><svg aria-hidden="true"><use href="#i-star"/></svg><svg aria-hidden="true"><use href="#i-star"/></svg></p>
+            <blockquote><p>Fuimos con niños un domingo a mediodía y nos sentaron en la terraza sin problema. Las migas, como las de mi abuela.</p></blockquote>
+            <p class="quote__meta mono">Javier R. · Comida familiar · Septiembre</p>
+          </li>
+          <li class="quote reveal" style="--i:3">
+            <p class="stars stars--small" aria-label="4 de 5 estrellas"><svg aria-hidden="true"><use href="#i-star"/></svg><svg aria-hidden="true"><use href="#i-star"/></svg><svg aria-hidden="true"><use href="#i-star"/></svg><svg aria-hidden="true"><use href="#i-star"/></svg><svg class="is-off" aria-hidden="true"><use href="#i-star"/></svg></p>
+            <blockquote><p>El chuletón de retinto merece la pena. Le quito un punto porque el sábado por la noche tardaron en sacar los postres, pero la técula mécula lo compensó.</p></blockquote>
+            <p class="quote__meta mono">Lucía P. · Cena en pareja · Septiembre</p>
+          </li>
+          <li class="quote reveal" style="--i:4">
+            <p class="stars stars--small" aria-label="5 de 5 estrellas"><svg aria-hidden="true"><use href="#i-star"/></svg><svg aria-hidden="true"><use href="#i-star"/></svg><svg aria-hidden="true"><use href="#i-star"/></svg><svg aria-hidden="true"><use href="#i-star"/></svg><svg aria-hidden="true"><use href="#i-star"/></svg></p>
+            <blockquote><p>Avisé al reservar de que mi pareja es celíaca y nos señalaron en la carta todo lo que podía comer. Se nota que saben de lo que hablan.</p></blockquote>
+            <p class="quote__meta mono">Antonio M. · Aniversario · Agosto</p>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- ============ DÓNDE ESTAMOS ============ -->
+    <section class="section visit" id="contacto" aria-labelledby="contacto-title">
+      <div class="wrap visit__grid">
+        <div class="visit__info">
+          <header class="section-head reveal">
+            <p class="eyebrow">04 — Dónde estamos</p>
+            <h2 id="contacto-title">A dos calles del<br>Templo de Diana</h2>
+          </header>
+
+          <div class="visit__block reveal" style="--i:1">
+            <p class="visit__address">C. de la Encina, 12<br>06800 Mérida (Badajoz) <span class="mono visit__fake">dirección ficticia</span></p>
+            <p class="visit__extra">Aparcamiento público a 200 metros, en la plaza de toros. Local accesible y sin escalones.</p>
+          </div>
+
+          <div class="visit__block reveal" style="--i:2">
+            <p class="status" data-status data-state="unknown"><span class="status__dot" aria-hidden="true"></span><span data-status-text>Horario</span></p>
+            <table class="hours">
+              <caption class="visually-hidden">Horario</caption>
+              <tbody>
+                <tr data-days="1"><th scope="row">Lunes</th><td>Cerrado</td></tr>
+                <tr data-days="2,3,4,5,6"><th scope="row">Martes a sábado</th><td><span class="nowrap">13:30–16:00</span> · <span class="nowrap">20:30–23:30</span></td></tr>
+                <tr data-days="0"><th scope="row">Domingo</th><td>13:30–16:30</td></tr>
+              </tbody>
+            </table>
+          </div>
+
+          <div class="visit__actions reveal" style="--i:3">
+            <a class="btn btn--primary" href="#reservas">Reservar mesa</a>
+            <a class="btn btn--ghost" data-tel href="tel:+34600000000">Llamar · <span data-tel-text>600 000 000</span></a>
+          </div>
+        </div>
+
+        <div class="visit__map reveal" style="--i:2">
+          <div class="map" data-map>
+            <div class="map__placeholder" data-map-placeholder>
+              <svg class="map__pin" aria-hidden="true"><use href="#i-pin"/></svg>
+              <p>El mapa es de OpenStreetMap, un servicio externo. Se carga solo si lo aceptas.</p>
+              <div class="map__actions">
+                <button class="btn btn--light btn--small" type="button" data-map-load>Cargar mapa</button>
+                <a class="link-light" href="https://www.openstreetmap.org/?mlat=38.9183&amp;mlon=-6.3432#map=17/38.9183/-6.3432" target="_blank" rel="noopener">Abrir en OpenStreetMap <span class="visually-hidden">(se abre en una pestaña nueva)</span></a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrap site-footer__grid">
+      <div class="site-footer__brand">
+        <p class="site-footer__logo">LUMBRE</p>
+        <p>Asador de ibérico a la brasa de encina en el centro de Mérida.</p>
+      </div>
+      <nav aria-label="Contacto">
+        <h2 class="mono">Contacto</h2>
+        <a data-wa href="https://wa.me/34600000000">WhatsApp</a>
+        <a data-tel href="tel:+34600000000"><span data-tel-text>600 000 000</span></a>
+        <a href="#reservas">Reservar mesa</a>
+      </nav>
+      <nav aria-label="Legal">
+        <h2 class="mono">Legal</h2>
+        <a href="aviso-legal.html">Aviso legal</a>
+        <a href="privacidad.html">Política de privacidad</a>
+        <a href="cookies.html">Política de cookies</a>
+        <button class="link-button" type="button" data-open-cookies>Configurar cookies</button>
+      </nav>
+      <div class="site-footer__credit">
+        <h2 class="mono">Concepto</h2>
+        <p>Negocio ficticio. Web diseñada y desarrollada por <a href="https://danielduranmoya-spec.github.io/">Daniel Durán</a>, creador web en Mérida.</p>
+      </div>
+    </div>
+    <div class="wrap site-footer__bottom mono">
+      <p>© <span data-year>2026</span> LUMBRE Asador · Concepto</p>
+      <a href="#inicio">Volver arriba ↑</a>
+    </div>
+  </footer>
+
+  <div class="cookie-banner" role="region" aria-label="Aviso de cookies" data-cookie-banner hidden>
+    <p class="cookie-banner__title">Tu elección sobre contenido externo</p>
+    <p>Esta web no usa cookies de publicidad ni de analítica. Si aceptas, cargamos el mapa de OpenStreetMap, que es un servicio de terceros. <a href="cookies.html">Más información</a></p>
+    <div class="cookie-banner__actions">
+      <button class="btn btn--cookie" type="button" data-consent="rejected">Rechazar</button>
+      <button class="btn btn--cookie" type="button" data-consent="accepted">Aceptar</button>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
