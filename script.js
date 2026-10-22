@@ -34,7 +34,7 @@
     margenMinutos: 30,          // no se puede reservar para dentro de menos de 30 min
     // Fotos que ya están subidas a la carpeta img/. Añade aquí el nombre de cada una
     // (por ejemplo 'carta-brasa.jpg') y se mostrará en lugar de su hueco. Lista completa en IMAGENES.md.
-    fotos: ['carta-brasa.jpg', 'carta-entrantes.jpg', 'carta-quesos.jpg', 'carta-postres.jpg', 'carta-vinos.jpg'],
+    fotos: ['hero-parrilla.jpeg', 'carta-brasa.jpeg', 'carta-entrantes.jpeg', 'carta-quesos.jpeg', 'carta-postres.jpeg', 'carta-vinos.jpeg'],
     mapa: 'https://www.openstreetmap.org/export/embed.html?bbox=-6.3492%2C38.9153%2C-6.3372%2C38.9213&layer=mapnik&marker=38.9183%2C-6.3432',
     claveConsentimiento: 'lumbre-consent'
   };
@@ -53,7 +53,7 @@
     brasa: {
       nombre: 'Brasa',
       nota: 'Toda la carne se hace sobre brasa de encina, sin gas ni planchas. Te recomendamos el punto, pero lo eliges tú.',
-      foto: { src: 'img/carta-brasa.jpg', alt: 'Presa ibérica cortada en láminas sobre una tabla de madera' },
+      foto: { src: 'img/carta-brasa.jpeg', alt: 'Presa ibérica cortada en láminas sobre una tabla de madera' },
       platos: [
         { nombre: 'Secreto ibérico de bellota', desc: '250 g, con patatas a lo pobre y pimiento asado.', precio: '19,50 €', alergenos: [] },
         { nombre: 'Presa ibérica', desc: '300 g, en láminas con sal en escamas.', precio: '22,00 €', alergenos: [] },
@@ -66,7 +66,7 @@
     entrantes: {
       nombre: 'Entrantes',
       nota: 'Para abrir boca mientras se hace la brasa. Las raciones están pensadas para compartir entre dos.',
-      foto: { src: 'img/carta-entrantes.jpg', alt: 'Migas extremeñas con uvas y huevo frito en una cazuela de barro' },
+      foto: { src: 'img/carta-entrantes.jpeg', alt: 'Migas extremeñas con uvas y huevo frito en una cazuela de barro' },
       platos: [
         { nombre: 'Jamón ibérico de bellota', desc: '100 g cortado a cuchillo, D.O.P. Dehesa de Extremadura, con pan de pueblo.', precio: '24,00 €', alergenos: ['gluten'] },
         { nombre: 'Migas extremeñas', desc: 'Con uvas, pimiento y huevo frito.', precio: '9,50 €', alergenos: ['gluten', 'huevo'] },
@@ -79,7 +79,7 @@
     quesos: {
       nombre: 'Quesos de la tierra',
       nota: 'Tres denominaciones de origen de Extremadura, servidas a temperatura ambiente, como deben comerse.',
-      foto: { src: 'img/carta-quesos.jpg', alt: 'Torta del Casar abierta con una cuchara y tostas alrededor' },
+      foto: { src: 'img/carta-quesos.jpeg', alt: 'Torta del Casar abierta con una cuchara y tostas alrededor' },
       platos: [
         { nombre: 'Torta del Casar D.O.P.', desc: 'Entera para abrir con cuchara, con tostas de pan.', precio: '14,00 €', alergenos: ['lacteos', 'gluten'] },
         { nombre: 'Queso de La Serena D.O.P.', desc: 'Cremoso, de leche cruda de oveja merina.', precio: '13,00 €', alergenos: ['lacteos'] },
@@ -90,7 +90,7 @@
     postres: {
       nombre: 'Postres',
       nota: 'Dulces de la tierra hechos en casa cada mañana. Si queda hueco, la técula mécula.',
-      foto: { src: 'img/carta-postres.jpg', alt: 'Porción de técula mécula con almendra laminada' },
+      foto: { src: 'img/carta-postres.jpeg', alt: 'Porción de técula mécula con almendra laminada' },
       platos: [
         { nombre: 'Técula mécula', desc: 'Tarta de almendra y yema, receta de Olivenza.', precio: '6,50 €', alergenos: ['frutos', 'huevo', 'gluten'] },
         { nombre: 'Sopa de cerezas del Jerte', desc: 'Con helado de queso fresco. Solo en temporada.', precio: '6,50 €', alergenos: ['lacteos'] },
@@ -101,7 +101,7 @@
     vinos: {
       nombre: 'Vinos',
       nota: 'Todos de la Ribera del Guadiana. El precio es por botella; la copa va indicada en cada vino.',
-      foto: { src: 'img/carta-vinos.jpg', alt: 'Copa de vino tinto junto a una botella de Ribera del Guadiana' },
+      foto: { src: 'img/carta-vinos.jpeg', alt: 'Copa de vino tinto junto a una botella de Ribera del Guadiana' },
       platos: [
         { nombre: 'Tinto joven Tempranillo', desc: 'Tierra de Barros, afrutado. Copa: 3,50 €.', precio: '18,00 €', alergenos: ['sulfitos'] },
         { nombre: 'Tinto crianza', desc: 'Doce meses en barrica de roble. Copa: 4,50 €.', precio: '24,00 €', alergenos: ['sulfitos'] },
