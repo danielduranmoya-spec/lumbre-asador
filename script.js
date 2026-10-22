@@ -34,7 +34,7 @@
     margenMinutos: 30,          // no se puede reservar para dentro de menos de 30 min
     // Fotos que ya están subidas a la carpeta img/. Añade aquí el nombre de cada una
     // (por ejemplo 'carta-brasa.jpg') y se mostrará en lugar de su hueco. Lista completa en IMAGENES.md.
-    fotos: [],
+    fotos: ['carta-brasa.jpg', 'carta-entrantes.jpg', 'carta-quesos.jpg', 'carta-postres.jpg', 'carta-vinos.jpg'],
     mapa: 'https://www.openstreetmap.org/export/embed.html?bbox=-6.3492%2C38.9153%2C-6.3372%2C38.9213&layer=mapnik&marker=38.9183%2C-6.3432',
     claveConsentimiento: 'lumbre-consent'
   };
@@ -200,9 +200,33 @@
     var ctx = canvas.getContext && canvas.getContext('2d');
     if (!ctx) return;
 
-    var MAX = 40;
+    // Más partículas en pantallas grandes; en móvil, menos para no gastar batería
+    var MAX = window.innerWidth < 760 ? 70 : 140;
     var dpr = Math.min(window.devicePixelRatio || 1, 2);
-    var w = 0, h = 0, parts = [], running = false, inView = true, raf = 0, last = 0;
+    var w = 0, h = 0, parts = [], running = false, inView = true, raf = 0, last = 0, time = 0;
+
+    // Halo pre-dibujado una vez: pintarlo escalado es mucho más barato que un degradado por brasa
+    var halo = document.createElement('canvas');
+    halo.width = halo.height = 64;
+    var hx = halo.getContext('2d');
+    var g = hx.createRadialGradient(32, 32, 0, 32, 32, 32);
+    g.addColorStop(0, 'rgba(255, 196, 120, 1)');
+    g.addColorStop(0.22, 'rgba(242, 120, 54, 0.55)');
+    g.addColorStop(0.55, 'rgba(217, 87, 43, 0.16)');
+    g.addColorStop(1, 'rgba(217, 87, 43, 0)');
+    hx.fillStyle = g;
+    hx.fillRect(0, 0, 64, 64);
+
+    // Resplandor de la parrilla, abajo: se dibuja en el mismo lienzo y «respira»
+    var fuego = document.createElement('canvas');
+    fuego.width = 256; fuego.height = 128;
+    var fx = fuego.getContext('2d');
+    var gf = fx.createRadialGradient(128, 128, 0, 128, 128, 128);
+    gf.addColorStop(0, 'rgba(255, 150, 80, 0.9)');
+    gf.addColorStop(0.35, 'rgba(217, 87, 43, 0.45)');
+    gf.addColorStop(1, 'rgba(217, 87, 43, 0)');
+    fx.fillStyle = gf;
+    fx.fillRect(0, 0, 256, 128);
 
     function resize() {
       var r = canvas.getBoundingClientRect();
@@ -212,36 +236,55 @@
       ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
     }
     function spawn(p, anywhere) {
-      p.x = Math.random() * w;
-      p.y = anywhere ? h * (0.35 + Math.random() * 0.65) : h + 8;
-      p.r = 0.8 + Math.random() * 1.8;
-      p.vy = 16 + Math.random() * 40;
-      p.vx = (Math.random() - 0.5) * 12;
+      // Nacen sobre todo en la franja central de abajo, como si salieran de la parrilla
+      var c = Math.random() < 0.7 ? 0.5 + (Math.random() - 0.5) * 0.7 : Math.random();
+      p.x = c * w;
+      p.y = anywhere ? h * (0.2 + Math.random() * 0.8) : h + 10;
+      p.spark = Math.random() < 0.12;              // chispas rápidas con estela
+      p.r = p.spark ? 1 + Math.random() * 1.2 : 1.2 + Math.random() * 2.6;
+      p.vy = p.spark ? 140 + Math.random() * 120 : 30 + Math.random() * 70;
+      p.vx = (Math.random() - 0.5) * (p.spark ? 60 : 22);
       p.life = anywhere ? Math.random() * 3 : 0;
-      p.max = 3 + Math.random() * 5;
+      p.max = p.spark ? 1.2 + Math.random() * 1.2 : 3 + Math.random() * 4.5;
       p.phase = Math.random() * Math.PI * 2;
-      p.hot = Math.random() < 0.35;
+      p.flicker = 6 + Math.random() * 10;
+      p.hot = Math.random() < 0.55;
       return p;
     }
     function frame(t) {
       if (!running) return;
       var dt = last ? Math.min((t - last) / 1000, 0.05) : 0.016;
-      last = t;
+      last = t; time += dt;
       ctx.clearRect(0, 0, w, h);
       ctx.globalCompositeOperation = 'lighter';
+      var respira = 0.78 + 0.16 * Math.sin(time * 1.4) + 0.06 * Math.sin(time * 4.1);
+      ctx.globalAlpha = respira * 0.6;
+      ctx.drawImage(fuego, -w * 0.1, h * 0.38, w * 1.2, h * 0.64);
       for (var i = 0; i < parts.length; i++) {
         var p = parts[i];
         p.life += dt;
+        p.vy *= p.spark ? 0.985 : 0.998;
         p.y -= p.vy * dt;
-        p.x += p.vx * dt + Math.sin(p.life * 1.6 + p.phase) * 0.25;
+        p.x += p.vx * dt + Math.sin(p.life * 1.8 + p.phase) * 0.45;
         var k = p.life / p.max;
-        if (k >= 1 || p.y < -8) { spawn(p, false); continue; }
-        var a = Math.sin(Math.PI * k) * 0.85;
-        ctx.fillStyle = 'rgba(217, 87, 43, ' + (a * 0.22).toFixed(3) + ')';
-        ctx.beginPath(); ctx.arc(p.x, p.y, p.r * 3.2, 0, Math.PI * 2); ctx.fill();
-        ctx.fillStyle = p.hot ? 'rgba(242, 166, 110, ' + a.toFixed(3) + ')' : 'rgba(217, 87, 43, ' + a.toFixed(3) + ')';
-        ctx.beginPath(); ctx.arc(p.x, p.y, p.r, 0, Math.PI * 2); ctx.fill();
+        if (k >= 1 || p.y < -12) { spawn(p, false); continue; }
+        var fl = 0.75 + 0.25 * Math.sin(time * p.flicker + p.phase);   // parpadeo de brasa viva
+        var a = Math.min(1, Math.sin(Math.PI * Math.min(1, k * 1.3)) * 1.1) * fl;
+        if (a <= 0.01) continue;
+        var s = p.r * (p.spark ? 9 : 14);
+        ctx.globalAlpha = a * (p.hot ? 1 : 0.75);
+        ctx.drawImage(halo, p.x - s / 2, p.y - s / 2, s, s);
+        if (p.spark) {
+          ctx.globalAlpha = a * 0.7;
+          ctx.strokeStyle = 'rgba(255, 190, 120, 1)';
+          ctx.lineWidth = p.r;
+          ctx.beginPath(); ctx.moveTo(p.x, p.y); ctx.lineTo(p.x - p.vx * 0.05, p.y + p.vy * 0.06); ctx.stroke();
+        }
+        ctx.globalAlpha = a;
+        ctx.fillStyle = p.hot ? '#FFD39A' : '#F07A3C';
+        ctx.beginPath(); ctx.arc(p.x, p.y, p.r * 0.9, 0, Math.PI * 2); ctx.fill();
       }
+      ctx.globalAlpha = 1;
       raf = window.requestAnimationFrame(frame);
     }
     function start() {
@@ -279,12 +322,13 @@
     $$('img[data-photo]').forEach(function (img) {
       var src = img.getAttribute('data-photo');
       if (!hasPhoto(src)) return;
+      img.onerror = function () { img.hidden = true; };   // si la foto aún no está subida, se queda el hueco
       img.src = src;
       img.hidden = false;
     });
   }
   function photoMarkup(f) {
-    var img = hasPhoto(f.src) ? '<img src="' + f.src + '" alt="' + f.alt + '" loading="lazy">' : '';
+    var img = hasPhoto(f.src) ? '<img src="' + f.src + '" alt="' + f.alt + '" loading="lazy" onerror="this.remove()">' : '';
     return '<figure class="ph" style="aspect-ratio: 4 / 3">' + img +
       '<figcaption class="ph__label"' + (img ? ' aria-hidden="true"' : '') + '><svg aria-hidden="true"><use href="#i-camera"/></svg><span>' + f.alt + '</span></figcaption>' +
       '</figure>';
